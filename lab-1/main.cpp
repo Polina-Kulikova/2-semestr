@@ -37,7 +37,6 @@ void show(sf::RenderWindow& window)
         for (int i = 0; i < m_text.length(); i++) // цикл для отображения каждой буквы текста
         {
             text.setString(m_text.substr(0, i+1));
-            sf::FloatRect textRect = text.getLocalBounds();
             text.setOrigin(100,100);
             text.setPosition(100,100);
 
