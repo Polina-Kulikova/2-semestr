@@ -1,0 +1,7 @@
+Hello, world!
+Fri Jun 16 16:25:08 2023
+Лабораторная работа
+Fri Jun 16 16:25:08 2023
+Program is working!
+Fri Jun 16 16:25:08 2023
+ERROR
