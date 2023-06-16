@@ -15,9 +15,9 @@ public:
     {
         std::cout<<"Constructor Figure"<<std::endl;
     }
-    virtual void Area()
+    virtual double Area()
     {
-        std::cout<< m_area <<std::endl;
+        return m_area ;
     }
     virtual ~Figure()
     {
@@ -35,10 +35,10 @@ public:
     {
         std::cout<<"Destructor Circle"<<std::endl;
     }
-    void Area() override
+    double Area() override
     {
         m_area = acos(-1)*pow(m_size[0],2);
-        std::cout<< m_area<<std::endl;
+        return m_area;
     }
 };
 class Triangle: public Figure
@@ -53,11 +53,11 @@ public:
         std::cout<<"Destructor Triangle"<<std::endl;
     }
     //Площадь по формуле Герона
-    void Area() override
+    double Area() override
     {
         double p = (m_size[0]+m_size[1]+m_size[2])/2;
         m_area = sqrt(p*(p-m_size[0])*(p-m_size[1])*(p-m_size[2]));
-        std::cout<< m_area<<std::endl;
+        return m_area;
     }
 };
 class Rectangle: public Figure
@@ -71,19 +71,19 @@ public:
     {
         std::cout<<"Destructor Rectangle"<<std::endl;
     }
-    void Area() override
+    double Area() override
     {
         m_area = m_size[0]*m_size[1];
-        std::cout<< m_area<<std::endl;
+        return m_area;
     }
 };
 int main()
 {
     std::vector <int> v ={3, 4, 5};
     Triangle f("Green", &v,12,13);
-    f.Area();
+    std::cout<<f.Area()<<std::endl;
     std::vector <int> k ={3};
     Circle c("Blue", &k, 5, 4);
-    c.Area();
+    std::cout<<c.Area()<<std::endl;
     return 0;
 }
